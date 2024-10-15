@@ -42,7 +42,7 @@ def leer_morse(codigo_morse:str)->str:
     return " ".join(traduccion)
 
 
-def leer_palabra(palabra:str)->str:
+def leer_palabra(frase:str)->str:
     alfabeto = {
         'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
         'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',    'J': '.---',
@@ -59,6 +59,14 @@ def leer_palabra(palabra:str)->str:
         ';': '-.-.-.', '=': '-...-',  '+': '.-.-.',  '-': '-....-', '_': '..--.-', 
         '"': '.-..-.', '$': '...-..-', '@': '.--.-.', ' ': '/'
     }
+
+    traduccion  = []
+    frase = frase.upper()
+
+    for ch in frase:
+        if ch in alfabeto:
+            traduccion.append(alfabeto[ch])
+    return '  '.join(traduccion)
 
 
 def main():
